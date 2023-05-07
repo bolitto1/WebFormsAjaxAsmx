@@ -11,7 +11,7 @@
             <td class="modal-sm" style="width: 195px; height: 22px">ID</td>
             <td style="height: 22px">
                 <asp:Label ID="lblId" runat="server" Text="0"></asp:Label>
-            </td>
+            </td>  
         </tr>
         <tr>
             <td class="modal-sm" style="width: 195px; height: 22px">CEDULA</td>
@@ -34,7 +34,7 @@
         <tr>
             <td class="modal-sm" style="width: 195px">FECHA DE NACIMIENTO</td>
             <td>
-                <asp:TextBox ID="txtDatePicker" runat="server"></asp:TextBox> 
+                <asp:TextBox ID="txtDatePicker" runat="server" Type="DATE" ></asp:TextBox> 
                 &nbsp;</td>
         </tr>
         <tr>
