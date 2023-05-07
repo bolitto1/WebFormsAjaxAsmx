@@ -1,10 +1,9 @@
-﻿Imports Microsoft.VisualBasic
-Imports System.ComponentModel
+﻿Imports CrystalDecisions.ReportAppServer.DataDefModel
+Imports Microsoft.VisualBasic
 Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Data.SqlTypes
 Imports System.Diagnostics
-
 
 Public Class procedimientos
 
@@ -30,7 +29,6 @@ Public Class procedimientos
         End Try
     End Function
 
-
     Public Function ConsultarRepetido(cedula1 As String) As String
         Dim res As String
         sql = "SELECT *  FROM [instituto].[dbo].[Estudiantes] where cedula='" + Trim(cedula1) + "'"
@@ -52,19 +50,6 @@ Public Class procedimientos
         End Try
         Return res
     End Function
-
-
-    Public Function ConsultarRepetidoN(cedula1 As String) As String
-        Dim resultado As String = constantes.Ok
-        If conectar() = constantes.Ok Then
-            resultado = ConsultarRepetido(cedula1)
-            ''ok significa que no esta repedio
-        End If
-        Return resultado
-    End Function
-
-
-
 
     Public Function Consultar(id As String) As Estudiante
         Dim est As New Estudiante
@@ -92,6 +77,16 @@ Public Class procedimientos
             End Try
         End If
         Return est
+    End Function
+
+
+    Public Function ConsultarRepetidoN(cedula1 As String) As String
+        Dim resultado As String = constantes.Ok
+        If conectar() = constantes.Ok Then
+            resultado = ConsultarRepetido(cedula1)
+            ''ok significa que no esta repedio
+        End If
+        Return resultado
     End Function
 
 
